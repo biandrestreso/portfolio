@@ -57,53 +57,53 @@ export default function Home() {
                       </p>
                       <ul className='mt-2 text-sm flex flex-wrap gap-1 text-slate-300' aria-label='Technologies used'>
                         <li>
-                          <div className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800/50'>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
                             C#
                           </div>
                         </li>
                         <li>
-                          <div className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800/50'>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
                             .NET
                           </div>
                         </li>
                         <li>
-                          <div className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800/50'>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
                             ASP.NET
                           </div>
                         </li>
                         <li>
-                          <div className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800/50'>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
                             SQL
                           </div>
                         </li>
                         {/* angular, react, xamarin, wordpress, python, vba */}
                         <li>
-                          <div className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800/50'>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
                             Angular
                           </div>
                         </li>
                         <li>
-                          <div className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800/50'>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
                             React
                           </div>
                         </li>
                         <li>
-                          <div className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800/50'>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
                             Xamarin
                           </div>
                         </li>
                         <li>
-                          <div className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800/50'>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
                             WordPress
                           </div>
                         </li>
                         <li>
-                          <div className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800/50'>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
                             Python
                           </div>
                         </li>
                         <li>
-                          <div className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800/50'>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
                             VBA
                           </div>
                         </li>
