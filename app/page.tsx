@@ -1,5 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
-import Image from 'next/image'
+'use client'
+
+import { motion } from 'framer-motion';
+import AnimatedTextLetter from './components/animated-text-letter';
 
 function getFlagEmoji(countryCode: string) {
   const codePoints = countryCode
@@ -9,9 +12,23 @@ function getFlagEmoji(countryCode: string) {
   return String.fromCodePoint(...codePoints);
 }
 
+const item = {
+  hidden: { opacity: 0, scale: 0.5 },
+  visible: (i: any) => {
+    const delay = 1 + i * 0.5;
+    return {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay,
+      }
+    };
+  }
+}
+
 export default function Home() {
   return (
-    <div className='mx-auto min-h-screen max-w-screen-xl overflow-x-hidden flex justify-between flex-col'>
+    <div className='mx-auto min-h-screen max-w-screen-xl flex justify-between flex-col'>
       <div className='lg:flex lg:justify-between lg:gap-4 px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0'>
         <header className='lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:py-24'>
           <div>
@@ -25,8 +42,8 @@ export default function Home() {
           </div>
         </header>
         <main className='pt-12 lg:pt-24 lg:w-1/2 lg:py-24'>
-          <section id='about' className='mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24'>
-            <div className='sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0'>
+          <section id='about' className='mb-16 scroll-mt-16 md:mb-24 lg:mb-12 lg:scroll-mt-24'>
+            <div className='sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:mx-auto lg:w-full lg:px-0 lg:py-2'>
               <h2 className='text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl'>About</h2>
             </div>
             <div>
@@ -37,14 +54,16 @@ export default function Home() {
                 Although High school was the true starting point of my coding journey. It was during this time that I delved into the realms of HTML, CSS, JavaScript, and Lua. As I geared up for university, I eagerly embraced the challenges of learning C#. I was also fascinated by the idea of being able to create something that could be used by anyone in the world.
               </p>
             </div>
-          </section>
-          <section id='experience' className='mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24'>
-            <div className='sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0'>
-              <h2 className='text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl'>Experience</h2>
+          </section> 
+          <section id='experience' className='mb-16 scroll-mt-16 md:mb-24 lg:mb-12 lg:scroll-mt-24'>
+            <div className='sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:mx-auto lg:w-full lg:px-0 lg:py-2'>
+              <h2 className='text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl'>
+                <AnimatedTextLetter text="Experience" />
+              </h2>
             </div>
             <div>
-              <ul>
-                <li className='mb-4'>
+              <motion.ul initial='hidden' animate='visible' className='flex flex-col gap-8 lg:gap-16'>
+                <motion.li variants={item} custom={1}>
                   <div className='group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50'>
                     <div className='absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg'></div>
                     <header className='z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2'>
@@ -68,7 +87,7 @@ export default function Home() {
                         </li>
                         <li>
                           <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
-                            ASP.NET
+                            ASP.NET MVC
                           </div>
                         </li>
                         <li>
@@ -76,7 +95,6 @@ export default function Home() {
                             SQL
                           </div>
                         </li>
-                        {/* angular, react, xamarin, wordpress, python, vba */}
                         <li>
                           <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
                             Angular
@@ -110,13 +128,85 @@ export default function Home() {
                       </ul>
                     </div>
                   </div>
-                </li>
-              </ul>
+                </motion.li>
+                <motion.li variants={item} custom={2}>
+                  <div className='group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50'>
+                    <div className='absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg'></div>
+                    <header className='z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2'>
+                       2020 - 2022
+                    </header>
+                    <div className='z-10 sm:col-span-6'>
+                      <h3 className='text-lg font-semibold text-slate-200'>Nelson Mandela University - Diploma Software Dev</h3>
+                      <p className='mt-1 text-sm text-slate-300'>
+                        I completed my Diploma in Information Technology (Software Development) at Nelson Mandela University in 2022, graduating Cum Laude.
+                      </p>
+                      <ul className='mt-2 text-sm flex flex-wrap gap-1 text-slate-300' aria-label='Technologies used'>
+                        <li>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
+                            C#
+                          </div>
+                        </li>
+                        <li>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
+                            .NET
+                          </div>
+                        </li>
+                        <li>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
+                            ASP.NET MVC
+                          </div>
+                        </li>
+                        <li>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
+                            SQL
+                          </div>
+                        </li>
+                        <li>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
+                            Python
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </motion.li>
+                <motion.li variants={item} custom={3}>
+                  <div className='group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50'>
+                    <div className='absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg'></div>
+                    <header className='z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2'>
+                       2014 - 2018
+                    </header>
+                    <div className='z-10 sm:col-span-6'>
+                      <h3 className='text-lg font-semibold text-slate-200'>D.F. Malherbe High School</h3>
+                      <p className='mt-1 text-sm text-slate-300'>
+                        I completed my high school career at D.F. Malherbe in 2018.
+                      </p>
+                      <ul className='mt-2 text-sm flex flex-wrap gap-1 text-slate-300' aria-label='Technologies used'>
+                        <li>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
+                            HTML
+                          </div>
+                        </li>
+                        <li>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
+                            CSS
+                          </div>
+                        </li>
+                        <li>
+                          <div className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50'>
+                            Javascript
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </motion.li>
+              </motion.ul>
             </div>
           </section>
         </main>
       </div>
-      <footer className='flex flex-col gap-4 items-center justify-center w-full h-24 border-t border-slate-400'>
+      <footer className='flex flex-col gap-4 items-center justify-center w-full h-24'>
         <ul className='flex items-center gap-6'>
           <li className='text-xs'>
             <a href='https://github.com/biandrestreso' target='_blank' rel='noopener noreferrer' className='hover:text-slate-100'>
@@ -141,9 +231,15 @@ export default function Home() {
             </a>
           </li>
         </ul>
-        <p className='text-sm text-slate-200'>
-          Made by Biandré Streso &copy; twentytwentythree.
+        <div className='text-sm text-center text-slate-200'>
+        <p>
+          Made by Biandré Streso
         </p>
+        <p>
+        twentytwentythree
+        </p>
+        </div>
+        
       </footer>
     </div>
   )
