@@ -2,11 +2,12 @@ import React from "react";
 import { motion, Variants } from "framer-motion";
 
 interface AnimatedTextCharacterProps {
+  initial?: number;
   text: string;
 }
 
-const AnimatedTextCharacter: React.FC<AnimatedTextCharacterProps> = ({ text }) => {
-  // splitting text into letters
+const AnimatedTextCharacter: React.FC<AnimatedTextCharacterProps> = ({ text, initial = 0 }) => {
+  // Splitting text into letters
   const letters = Array.from(text);
 
   // Variants for Container
@@ -48,6 +49,8 @@ const AnimatedTextCharacter: React.FC<AnimatedTextCharacterProps> = ({ text }) =
       variants={container}
       initial="hidden"
       animate="visible"
+      // add initial delay as a custom prop
+      custom={initial}
     >
       {letters.map((letter, index) => (
         <motion.span variants={child} key={index}>

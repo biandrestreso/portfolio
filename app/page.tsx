@@ -2,8 +2,10 @@
 "use client";
 
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
-import { MouseEvent } from "react";
+import { MouseEvent, useEffect, useRef } from "react";
+import { SiCsharp, SiCss3, SiHtml5, SiJavascript, SiLua, SiMicrosoftsqlserver, SiPython, SiTypescript } from "react-icons/si";
 import AnimatedTextLetter from "./components/animated-text-letter";
+import { TypeAnimation } from "react-type-animation";
 
 function getFlagEmoji(countryCode: string) {
   const codePoints = countryCode
@@ -26,6 +28,8 @@ const item = {
     };
   },
 };
+
+
 
 export default function Home() {
   let mouseX = useMotionValue(0);
@@ -60,21 +64,37 @@ export default function Home() {
                 Biandré Streso
               </h1>
               <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-                Software Engineer at CompRSA - {getFlagEmoji("za")}
+                <TypeAnimation
+                  sequence={[
+                    // Same substring at the start will only be typed once, initially
+                    'Front End Developer at CompRSA - ' + getFlagEmoji("za"),
+                    1000,
+                    'Back End Developer at CompRSA - ' + getFlagEmoji("za"),
+                    1000,
+                    'Full Stack Developer at CompRSA - ' + getFlagEmoji("za"),
+                    1000,
+                    'Software Engineer at CompRSA - ' + getFlagEmoji("za"),
+                    1000,
+                  ]}
+                  speed={50}
+                  deletionSpeed={75}
+                />
               </h2>
-              <p className="mt-4 max-w-sm leading-normal">
-                I'm a software engineer based in South Africa. I enjoy building
-                things that live on the internet, whether that be websites,
-                applications, or anything in between. My goal is to always build
-                products that provide pixel-perfect, performant experiences.
+              <p className="mt-4 max-w-sm leading-normal text-justify">
+                I'm a software engineer based in South Africa. I enjoy building things that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that provide pixel-perfect, performance experiences.
               </p>
               <nav className="nav hidden lg:block">
                 <ul className="flex flex-col pl-4  mt-6">
                   <li>
                     <a href="#about" className="group flex items-center py-3">
-                      {/* make a cool line that displays the active state */}
                       <span className="w-1 h-1 bg-slate-100 rounded-full mr-2"></span>
                       About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#languages" className="group flex items-center py-3">
+                      <span className="w-1 h-1 bg-slate-100 rounded-full mr-2"></span>
+                      Languages
                     </a>
                   </li>
                   <li>
@@ -151,11 +171,11 @@ export default function Home() {
           <main className="pt-12 lg:pt-24 lg:w-1/2 lg:py-24">
             <section
               id="about"
-              className="mb-16 scroll-mt-16 md:mb-24 lg:mb-12 lg:scroll-mt-24"
+              className="mb-16 scroll-mt-16 md:mb-24 lg:mb-12 lg:scroll-mt-24 "
             >
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:mx-auto lg:w-full lg:px-0 lg:py-2">
                 <h2 className="text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl">
-                  About
+                  About Me
                 </h2>
               </div>
               <div>
@@ -174,13 +194,83 @@ export default function Home() {
                 </p>
               </div>
             </section>
+            <section id="languages" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-12 lg:scroll-mt-24">
+              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:mx-auto lg:w-full lg:px-0 lg:py-2">
+                <h2 className="text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl">
+                  <p>Languages I speak</p>
+                </h2>
+              </div>
+              <div>
+                <ul
+                  className="flex flex-col gap-2 lg:gap-4"
+                >
+                  <li>
+                    <div>
+                      <p className="text-md font-bold tracking-tight sm:text-2xl">
+                        C#
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <p className="text-md font-bold tracking-tight sm:text-2xl">
+                        HTML
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <p className="text-md font-bold tracking-tight sm:text-2xl">
+                        JavaScript
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <p className="text-md font-bold tracking-tight sm:text-2xl">
+                        TypeScript
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <p className="text-md font-bold tracking-tight sm:text-2xl">
+                        CSS
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <p className="text-md font-bold tracking-tight sm:text-2xl">
+                        Python
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <p className="text-md font-bold tracking-tight sm:text-2xl">
+                        SQL
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <p className="text-md font-bold tracking-tight sm:text-2xl">
+                        Lua
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+            </section>
             <section
               id="experience"
               className="mb-16 scroll-mt-16 md:mb-24 lg:mb-12 lg:scroll-mt-24"
             >
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:mx-auto lg:w-full lg:px-0 lg:py-2">
                 <h2 className="text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl">
-                  <AnimatedTextLetter text="Experience" />
+                  <AnimatedTextLetter text="My Experience" />
                 </h2>
               </div>
               <div>
@@ -356,7 +446,7 @@ export default function Home() {
         <footer className="flex flex-col gap-4 items-center justify-center w-full h-24">
           <div className="text-sm text-center text-slate-200">
             <p>Made by Biandré Streso</p>
-            <p>twentytwentythree</p>
+            <p>twenty20three</p>
           </div>
         </footer>
       </div>

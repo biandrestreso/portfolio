@@ -2,10 +2,11 @@ import React from "react";
 import { motion, Variants } from "framer-motion";
 
 interface AnimatedTextWordProps {
+  initial?: number;
   text: string;
 }
 
-const AnimatedTextWord: React.FC<AnimatedTextWordProps> = ({ text }) => {
+const AnimatedTextWord: React.FC<AnimatedTextWordProps> = ({ text, initial = 0 }) => {
   const words = text.split(" ");
 
   // Variants for Container of words.
@@ -45,6 +46,7 @@ const AnimatedTextWord: React.FC<AnimatedTextWordProps> = ({ text }) => {
       variants={container}
       initial="hidden"
       animate="visible"
+      custom={initial} // Pass the initial delay as a custom prop
     >
       {words.map((word, index) => (
         <motion.span
