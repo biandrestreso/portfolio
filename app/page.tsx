@@ -31,11 +31,7 @@ export default function Home() {
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
 
-  function handleMouseMove({
-    currentTarget,
-    clientX,
-    clientY,
-  }: MouseEvent) {
+  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
     let { left, top } = currentTarget.getBoundingClientRect();
 
     mouseX.set(clientX - left);
@@ -44,7 +40,8 @@ export default function Home() {
 
   return (
     <div className="group/spotlight relative" onMouseMove={handleMouseMove}>
-      <motion.div style={{
+      <motion.div
+        style={{
           background: useMotionTemplate`
             radial-gradient(
               350px circle at ${mouseX}px ${mouseY}px,
@@ -52,7 +49,9 @@ export default function Home() {
               transparent 80%
             )
           `,
-        }} className="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute"></motion.div>
+        }}
+        className="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute md:block hidden"
+      ></motion.div>
       <div className="mx-auto min-h-screen max-w-screen-xl flex justify-between flex-col">
         <div className="lg:flex lg:justify-between lg:gap-4 px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:py-24">
@@ -118,7 +117,7 @@ export default function Home() {
                       <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
                         2022 - Present
                       </header>
-                      <div className="z-10 sm:col-span-6">
+                      <div className="z-10 sm:col-span-6 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-4 rounded-md">
                         <h3 className="text-lg font-semibold text-slate-200">
                           CompRSA - Software Engineer
                         </h3>
@@ -133,52 +132,52 @@ export default function Home() {
                           aria-label="Technologies used"
                         >
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               C#
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               .NET
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               ASP.NET MVC
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               SQL
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               Angular
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               React
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               Xamarin
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               WordPress
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               Python
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               VBA
                             </div>
                           </li>
@@ -192,7 +191,7 @@ export default function Home() {
                       <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
                         2020 - 2022
                       </header>
-                      <div className="z-10 sm:col-span-6">
+                      <div className="z-10 sm:col-span-6 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-4 rounded-md">
                         <h3 className="text-lg font-semibold text-slate-200">
                           Nelson Mandela University - Diploma Software Dev
                         </h3>
@@ -206,27 +205,27 @@ export default function Home() {
                           aria-label="Technologies used"
                         >
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               C#
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               .NET
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               ASP.NET MVC
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               SQL
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               Python
                             </div>
                           </li>
@@ -240,7 +239,7 @@ export default function Home() {
                       <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
                         2014 - 2018
                       </header>
-                      <div className="z-10 sm:col-span-6">
+                      <div className="z-10 sm:col-span-6 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-4 rounded-md">
                         <h3 className="text-lg font-semibold text-slate-200">
                           D.F. Malherbe High School
                         </h3>
@@ -253,17 +252,17 @@ export default function Home() {
                           aria-label="Technologies used"
                         >
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               HTML
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               CSS
                             </div>
                           </li>
                           <li>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-700/50">
+                            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
                               Javascript
                             </div>
                           </li>
