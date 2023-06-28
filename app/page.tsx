@@ -297,7 +297,7 @@ export default function Home() {
             </li>
             <li className="text-xs">
               <a
-                href="https://www.linkedin.com/in/biandr%C3%A9-streso-0b8435259/"
+                href="https://www.linkedin.com/in/biandrestreso/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-slate-100"
