@@ -2,8 +2,7 @@
 "use client";
 
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
-import { MouseEvent, useEffect, useRef } from "react";
-import { SiCsharp, SiCss3, SiHtml5, SiJavascript, SiLua, SiMicrosoftsqlserver, SiPython, SiTypescript } from "react-icons/si";
+import { MouseEvent } from "react";
 import AnimatedTextLetter from "./components/animated-text-letter";
 import { TypeAnimation } from "react-type-animation";
 
@@ -63,15 +62,14 @@ export default function Home() {
               <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
                 Biandré Streso
               </h1>
-              <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
+              <h2 className="mt-3 h-8 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
                 <TypeAnimation
                   sequence={[
                     'Front End Developer',
-                    1000,
+                    200,
                     'Back End Developer',
-                    1000,
-                    'Full Stack Developer at CompRSA',
-                    1000,
+                    200,
+                    'Full Stack Developer at CompRSA'
                   ]}
                   speed={50}
                   deletionSpeed={75}
