@@ -66,14 +66,11 @@ export default function Home() {
               <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
                 <TypeAnimation
                   sequence={[
-                    // Same substring at the start will only be typed once, initially
-                    'Front End Developer at CompRSA - ' + getFlagEmoji("za"),
+                    'Front End Developer',
                     1000,
-                    'Back End Developer at CompRSA - ' + getFlagEmoji("za"),
+                    'Back End Developer',
                     1000,
-                    'Full Stack Developer at CompRSA - ' + getFlagEmoji("za"),
-                    1000,
-                    'Software Engineer at CompRSA - ' + getFlagEmoji("za"),
+                    'Full Stack Developer at CompRSA',
                     1000,
                   ]}
                   speed={50}
@@ -81,7 +78,7 @@ export default function Home() {
                 />
               </h2>
               <p className="mt-4 max-w-sm leading-normal text-justify">
-                I'm a software engineer based in South Africa. I enjoy building things that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that provide pixel-perfect, performance experiences.
+                I'm a software dev based in South Africa. I enjoy building things that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that provide pixel-perfect, performance experiences.
               </p>
               <nav className="nav hidden lg:block">
                 <ul className="flex flex-col pl-4  mt-6">
