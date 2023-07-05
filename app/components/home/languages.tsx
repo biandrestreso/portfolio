@@ -18,7 +18,7 @@ export default function Languages() {
         </h2>
       </div>
       <div>
-        <ul className="flex items-center gap-1 lg:gap-2">
+        <ul className="flex flex-wrap gap-2 justify-center">
           {programmingLanguages.map((language) => (
             <li key={language}>
               <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-700/50 text-cyan-300">
