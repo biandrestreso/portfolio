@@ -43,7 +43,7 @@ const timelineItems = [
     date: "2020 - 2022",
   },
   {
-    title: "D.F. Malherbe High School",
+    title: "D.F. Malherbe",
     role: "High School",
     description: "I completed my high school career at D.F. Malherbe in 2018.",
     technologies: ["HTML", "CSS", "Javascript"],
