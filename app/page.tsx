@@ -42,9 +42,31 @@ export default function Home() {
         <div className="lg:flex lg:justify-between lg:gap-4 px-6 pt-12 md:px-12 md:pt-20 lg:px-24 lg:pt-0">
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:py-24">
             <div>
-              <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
-                Biandré Streso
-              </h1>
+              <div className="group relative cursor-pointer">
+                <div className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl flex items-center relative">
+                  {"Biandré Streso".split("").map((letter, index) => (
+                    <h1
+                      key={index}
+                      className="origin-top transition-transform duration-200 ease-in-out group-hover:scale-y-0"
+                      style={{ transitionDelay: `${index * 75}ms` }}
+                    >
+                      {letter === " " ? "\u00A0" : letter}
+                    </h1>
+                  ))}
+                  <div className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl flex items-center absolute bottom-0">
+                    {"Biandré Streso".split("").map((letter, index) => (
+                      <h1
+                        key={index}
+                        className="origin-bottom transition-transform duration-200 ease-in-out scale-y-0 group-hover:scale-y-100"
+                        style={{ transitionDelay: `${index * 75}ms` }}
+                      >
+                        {letter === " " ? "\u00A0" : letter}
+                      </h1>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
               <h2 className="mt-3 h-8 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
                 <TypeAnimation
                   sequence={[
@@ -118,7 +140,6 @@ export default function Home() {
               id="experience"
               className="mb-16 scroll-mt-16 md:mb-24 lg:mb-12 lg:scroll-mt-24"
             >
-
               <Timeline />
             </section>
           </main>

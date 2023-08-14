@@ -78,11 +78,11 @@ export default function Projects() {
                     No projects to display at the moment.
                 </p>
             </div>
-            {/* <Slider {...settings}>
+            <Slider {...settings}>
                 {projects.map((project) => (
                     <div
                         key={project.id}
-                        className="max-w-sm rounded overflow-hidden shadow-lg"
+                        className="max-w-sm bg-white rounded overflow-hidden shadow-lg "
                     >
                         <Image src={project.imageUrl} alt={project.title} width={50} height={50} />
                         <div className="px-6 py-4">
@@ -91,7 +91,7 @@ export default function Projects() {
                         </div>
                     </div>
                 ))}
-            </Slider> */}
+            </Slider>
         </div>
     );
 }
