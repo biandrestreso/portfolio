@@ -26,7 +26,7 @@ export default function RootLayout({
       <body
         className={
           inter.className +
-          " bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-cyan-300 selection:text-cyan-900"
+          " bg-slate-950 leading-relaxed text-slate-400 antialiased selection:bg-cyan-300 selection:text-cyan-900"
         }
       >
         {children}
