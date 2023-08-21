@@ -6,7 +6,14 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Biandré Streso",
-  description: "Portfolio of Biandre Streso",
+  description: "Portfolio | Biandre Streso",
+  keywords: ["Next.js", "React", "Tailwind CSS", "Biandré", "Streso"],
+  authors: [
+    {
+      name: "Biandré Streso",
+    },
+  ],
+  creator: "Biandré Streso",
 };
 
 export default function RootLayout({
